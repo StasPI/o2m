@@ -1,0 +1,8 @@
+heroku create o2m
+heroku create o2m-s
+
+git remote add pro https://git.heroku.com/o2m.git
+git remote add stage https://git.heroku.com/o2m-s.git
+
+https://o2m.herokuapp.com/
+https://o2m-s.herokuapp.com/
