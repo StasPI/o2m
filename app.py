@@ -6,7 +6,7 @@ app = Flask(__name__)
  
 @app.route('/')
 def hello():
-    DATABASE_URL = os.environ['postgresql-rectangular-84724']
+    DATABASE_URL = os.environ['DATABASE_URL']
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM random_user')
