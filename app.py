@@ -11,8 +11,8 @@ def hello():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM random_user')
     records = cursor.fetchall()
-    
-    return "test"
+    for i in records:
+        return str(i)
  
 if __name__ == '__main__':
     app.run()
