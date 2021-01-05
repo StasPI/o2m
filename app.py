@@ -12,7 +12,7 @@ def hello():
     cursor.execute('SELECT * FROM random_user')
     records = cursor.fetchall()
     
-    return records
+    return "test"
  
 if __name__ == '__main__':
     app.run()
