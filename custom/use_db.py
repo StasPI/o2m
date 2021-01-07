@@ -2,6 +2,9 @@ import psycopg2
 
 
 class UseDB():
+    def __init__(self):
+        pass
+        
     def connect_db(self):
         DATABASE_URL = os.environ['DATABASE_URL']
         conn = psycopg2.connect(DATABASE_URL, sslmode='require')
