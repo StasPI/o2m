@@ -17,10 +17,12 @@
         <p><strong>   </strong></p>
     <form class="form">
     <p><strong>Помню только этих:</strong></p>
-    <ul style = "list-style-type:none">
+    <div class="wa box_div">
+    <ul class="box_block">
         {% for user in users %}
             <li><strong>{{ user }}</strong></li>
         {% endfor %}
     </ul>
+    </div>
     </form>
 {% endblock %}
