@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}
+Какой то титул в финише
+{% endblock %}
+{% block content %}
+    <form class="form" action="" method="post">
+        <label for="insert_username">Напиши и я его запомню</label>
+	    <input class="rounded-input" type="text" name="insert_username">
+        <input value="Запомни" class="button" type="submit">
+    </form>
+    <p><strong>   </strong></p>
+    <p><strong> </strong></p>
+    <form class="form" action="" method="post">
+        <label for="delete_username">Напиши и я его забуду</label>
+	    <input class="rounded-input" type="text" name="delete_username">
+        <input value="Забудь" class="button" type="submit">
+    </form>
+    
+    <p><strong>Помню только этих:</strong></p>
+    <ul>
+        {% for user in users %}
+            <li><strong>{{ user }}</strong></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

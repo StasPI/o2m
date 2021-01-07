@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}
+Рандомайзер
+{% endblock %}
+{% block content %}
+<p><strong>Нажми на кнопку получишь результат.</strong></p>
+    <form method=post enctype=multipart/form-data>
+        <p><input type=file class="button" name=profile_first></p>
+        <p><input type=file class="button" name=profile_second></p>
+        <p><input type=submit class="button"  value=Загрузить></p>
+    </form>
+{% endblock %}
