@@ -5,11 +5,7 @@
 {% block content %}
     <form class="form" action="" method="post">
         <label>Нажми на кнопку - получишь результат:</label>
-        <ul>
-            {% for user in random_users %}
-                <li><strong>{{ user }}</strong></li>
-            {% endfor %}
-        </ul>
+            <strong>{{ random_user }}</strong><
         <input value="Давай следующего" class="button" type="submit">
     </form>
 {% endblock %}

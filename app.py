@@ -10,8 +10,7 @@ from random import choice
 
 def random():
     user = choice(db.all_users())
-    users = [user,]
-    return users
+    return user
 
 @app.after_request
 def add_header(response):
@@ -25,7 +24,7 @@ def home():
         if request.method == 'GET':
             return render_template('home.html')
         elif request.method == 'POST':
-            return render_template('home.html', random_users=random())
+            return render_template('home.html', random_user=random())
         return render_template('home.html')
     except:
         return redirect(url_for('home'))
