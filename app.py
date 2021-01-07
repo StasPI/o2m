@@ -4,11 +4,6 @@ import psycopg2
 app = Flask(__name__)
 
 
-def close_connect_db(cursor):
-    cursor.close()
-    conn.close()
-
-
 def connect_db():
     DATABASE_URL = os.environ['DATABASE_URL']
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
@@ -23,7 +18,7 @@ def all_users():
     cursor.execute(sql)
     records = cursor.fetchall()
     for user in records:
-        users.append(user)
+        users.append(user[0])
     return users
 
 
@@ -71,7 +66,6 @@ def user():
                 delete_user(delete_username)
                 
         users = all_users()
-        # users = ['one', 'two']
         return render_template("user.html", users=users)
     except:
         return redirect(url_for('home'))
