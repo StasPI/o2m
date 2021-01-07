@@ -46,10 +46,10 @@ def delete_user(delete_username):
     close_connect_db(cursor)
 
 
-@app.after_request
-def add_header(response):
-    response.cache_control.max_age = 30
-    return response
+# @app.after_request
+# def add_header(response):
+#     response.cache_control.max_age = 30
+#     return response
 
 
 @app.route('/', methods=['GET'])
@@ -57,6 +57,7 @@ def home():
     try:
         if request.method == 'GET':
             return render_template('home.html')
+        return render_template('home.html')
     except:
         return redirect(url_for('home'))
 
