@@ -1,8 +1,7 @@
 import os
 from flask import Flask, redirect, render_template, request, url_for
 import psycopg2
-
-
+app = Flask(__name__)
 
 def close_connect_db(cursor):
     cursor.close()
@@ -75,3 +74,6 @@ def home():
 #         return render_template("user.html", users=all_users())
 #     except:
 #         return redirect(url_for('user'))
+
+if __name__ == '__main__':
+    app.run()
