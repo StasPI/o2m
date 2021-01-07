@@ -24,7 +24,7 @@ def all_users():
     records = cursor.fetchall()
     for user in records:
         users.append(user)
-    close_connect_db(cursor)
+    # close_connect_db(cursor)
     return users
 
 
@@ -73,11 +73,12 @@ def user():
             elif delete_username != None:
                 delete_user(delete_username)
                 
-        sql = 'select Name from random_user'        
-        cursor = connect_db()
-        cursor.execute(sql)
-        records = cursor.fetchall()
+        # sql = 'select Name from random_user'        
+        # cursor = connect_db()
+        # cursor.execute(sql)
+        # records = cursor.fetchall()
         
+        user = all_users()
         users = ['one', 'two']
         return render_template("user.html", users=users)
     except:
