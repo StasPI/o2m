@@ -23,7 +23,7 @@ def all_users():
 
 
 def insert_user(insert_username):
-    sql = 'insert intro random_user (Name) values(\'' + str(
+    sql = 'insert into random_user (Name) values(\'' + str(
         insert_username) + '\')'
     conn, cursor = connect_db()
     cursor.execute(sql)
