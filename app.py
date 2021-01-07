@@ -3,6 +3,7 @@ from flask import Flask, redirect, render_template, request, url_for
 import psycopg2
 app = Flask(__name__)
 
+
 def close_connect_db(cursor):
     cursor.close()
     conn.close()
@@ -71,9 +72,11 @@ def user():
                 insert_user(insert_username)
             elif delete_username != None:
                 delete_user(delete_username)
-        return render_template("user.html", users=all_users())
+        users = all_users()
+        return render_template("user.html", users=users)
     except:
         return redirect(url_for('user'))
+
 
 if __name__ == '__main__':
     app.run()
