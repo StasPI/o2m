@@ -24,7 +24,6 @@ def all_users():
     records = cursor.fetchall()
     for user in records:
         users.append(user)
-    # close_connect_db(cursor)
     return users
 
 
@@ -34,7 +33,6 @@ def insert_user(insert_username):
     cursor = connect_db()
     cursor.execute(sql)
     conn.commit()
-    close_connect_db(cursor)
 
 
 def delete_user(delete_username):
@@ -43,7 +41,6 @@ def delete_user(delete_username):
     cursor = connect_db()
     cursor.execute(sql)
     conn.commit()
-    close_connect_db(cursor)
 
 
 @app.after_request
@@ -73,13 +70,8 @@ def user():
             elif delete_username != None:
                 delete_user(delete_username)
                 
-        # sql = 'select Name from random_user'        
-        # cursor = connect_db()
-        # cursor.execute(sql)
-        # records = cursor.fetchall()
-        
-        user = all_users()
-        users = ['one', 'two']
+        users = all_users()
+        # users = ['one', 'two']
         return render_template("user.html", users=users)
     except:
         return redirect(url_for('home'))
