@@ -3,10 +3,13 @@
 Рандомайзер
 {% endblock %}
 {% block content %}
-<p><strong>Нажми на кнопку получишь результат.</strong></p>
-    <form method=post enctype=multipart/form-data>
-        <p><input type=file class="button" name=profile_first></p>
-        <p><input type=file class="button" name=profile_second></p>
-        <p><input type=submit class="button"  value=Загрузить></p>
+    <form class="form" action="" method="post">
+        <label>Нажми на кнопку - получишь результат:</label>
+        <ul>
+            {% for user in random_users %}
+                <li><strong>{{ user }}</strong></li>
+            {% endfor %}
+        </ul>
+        <input value="Давай следующего" class="button" type="submit">
     </form>
 {% endblock %}
