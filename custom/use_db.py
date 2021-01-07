@@ -11,7 +11,7 @@ class UseDB():
     def all_users():
         sql = 'select Name from random_user'
         users = []
-        conn, cursor = connect_db()
+        conn, cursor = self.connect_db()
         cursor.execute(sql)
         records = cursor.fetchall()
         for user in records:
@@ -21,13 +21,13 @@ class UseDB():
     def insert_user(insert_username):
         sql = 'insert into random_user (Name) values(\'' + str(
             insert_username) + '\')'
-        conn, cursor = connect_db()
+        conn, cursor = self.connect_db()
         cursor.execute(sql)
         conn.commit()
 
     def delete_user(delete_username):
         sql = 'delete from random_user where Name = \'' + str(
             delete_username) + '\''
-        conn, cursor = connect_db()
+        conn, cursor = self.connect_db()
         cursor.execute(sql)
         conn.commit()
