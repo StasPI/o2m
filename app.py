@@ -35,7 +35,7 @@ def delete_user(delete_username):
         delete_username) + '\''
     cursor = connect_db()
     cursor.execute(sql)
-    conn.commit()
+    cursor.commit()
 
 
 @app.after_request
