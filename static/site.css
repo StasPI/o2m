@@ -83,16 +83,3 @@ input:focus {
   font-family: sans-serif;
   letter-spacing: 1px;
 }
-
-.container {
-  width: 100%;
-}
-
-.container ul {
-  text-align: center;
-  list-style: none;
-}
-
-.container li {
-  display: inline-block;
-}
