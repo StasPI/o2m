@@ -72,7 +72,7 @@ def user():
                 insert_user(insert_username)
             elif delete_username != None:
                 delete_user(delete_username)
-        users = all_users()
+        cursor = connect_db()
         users = ['one', 'two']
         return render_template("user.html", users=users)
     except:
