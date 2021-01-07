@@ -72,7 +72,12 @@ def user():
                 insert_user(insert_username)
             elif delete_username != None:
                 delete_user(delete_username)
+                
+        sql = 'select Name from random_user'        
         cursor = connect_db()
+        cursor.execute(sql)
+        records = cursor.fetchall()
+        
         users = ['one', 'two']
         return render_template("user.html", users=users)
     except:
