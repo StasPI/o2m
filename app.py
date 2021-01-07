@@ -8,13 +8,13 @@ def connect_db():
     DATABASE_URL = os.environ['DATABASE_URL']
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
-    return cursor
+    return conn, cursor
 
 
 def all_users():
     sql = 'select Name from random_user'
     users = []
-    cursor = connect_db()
+    conn, cursor = connect_db()
     cursor.execute(sql)
     records = cursor.fetchall()
     for user in records:
@@ -25,7 +25,7 @@ def all_users():
 def insert_user(insert_username):
     sql = 'insert intro random_user (Name) values(\'' + str(
         insert_username) + '\')'
-    cursor = connect_db()
+    conn, cursor = connect_db()
     cursor.execute(sql)
     conn.commit()
 
@@ -33,9 +33,9 @@ def insert_user(insert_username):
 def delete_user(delete_username):
     sql = 'delete from random_user where Name = \'' + str(
         delete_username) + '\''
-    cursor = connect_db()
+    conn, cursor = connect_db()
     cursor.execute(sql)
-    cursor.commit()
+    conn.commit()
 
 
 @app.after_request
@@ -64,9 +64,7 @@ def user():
                 insert_user(insert_username)
             elif delete_username != None:
                 delete_user(delete_username)
-                
-        users = all_users()
-        return render_template("user.html", users=users)
+        return render_template("user.html", users=all_users())
     except:
         return redirect(url_for('home'))
 
