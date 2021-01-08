@@ -16,9 +16,9 @@
     </form>
         <p><strong>   </strong></p>
     <form class="form">
-    <p><select name="Удали меня я не хочу в этом учавствовать" size="1"></select></p>
+    <p><select name="Удали меня я не хочу в этом учавствовать"></select></p>
         {% for user in users %}
-            <option selected>{{ user }}</option>
+            <option value={{ user }}>{{ user }}</option>
         {% endfor %}
     </form>
 {% endblock %}
