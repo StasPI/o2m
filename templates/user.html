@@ -15,15 +15,22 @@
         <input value="Забудь" class="button" type="submit">
     </form>
         <p><strong>   </strong></p>
+
     <form class="form">
-                <select id="phone" name="phone">
-                    <option value="iphone 6s">iPhone 6S</option>
-                    <option value="lumia 950">Lumia 950</option>
-                    <option value="nexus 5x">Nexus 5X</option>
-                    <option value="galaxy s7">Galaxy S7</option>
-                </select>
-        {% comment %} {% for user in users %}
-            <option value={{ user }}>{{ user }}</option>
-        {% endfor %} {% endcomment %}
+    <p><strong>Помню только этих:</strong></p>
+    <ul class="list5b">
+        {% for user in users %}
+            <li><strong>{{ user }}</strong></li>
+        {% endfor %}
+    </ul>
+    </form>
+        <p><strong>   </strong></p>
+    <form class="form">
+        <select id="phone" name="phone">
+            <option value="iphone 6s">iPhone 6S</option>
+            <option value="lumia 950">Lumia 950</option>
+            <option value="nexus 5x">Nexus 5X</option>
+            <option value="galaxy s7">Galaxy S7</option>
+        </select>
     </form>
 {% endblock %}
