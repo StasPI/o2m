@@ -30,11 +30,11 @@ def home():
 @app.route('/user/', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def user():
     try:
-        if request.method == 'delete':
+        if request.method == 'post':
             insert_username = request.form.get('insert_username')
             if insert_username != None:
                 db.insert_user(insert_username)
-        elif request.method == 'POST':
+        elif request.method == 'delete':
             delete_username = request.form.get('delete_username')
             if delete_username != None:
                 # db.delete_user(delete_username)
