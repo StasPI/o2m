@@ -15,6 +15,14 @@
         <input value="Забудь" class="button" type="submit">
     </form>
         <p><strong>   </strong></p>
+    <form>
+    <select id="select"></select>
+    const select = document.querySelector('#select');
 
-
+    for (let i = 1; i <= 100; i++) {
+    const option = document.createElement('option');
+    option.textContent = option.value = i;
+    select.append(option);
+    }
+    </form>
 {% endblock %}
