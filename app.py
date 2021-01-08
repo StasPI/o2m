@@ -46,11 +46,11 @@ def user():
     # except:
     #     return redirect(url_for('home'))
     try:
-        if request.method == 'POST':
+        if request.method == 'DELETE':
             insert_username = request.form.get('insert_username')
             if insert_username != None:
                 db.insert_user(insert_username)
-        elif request.method == 'DELETE':
+        elif request.method == 'POST':
             delete_username = request.form.get('delete_username')
             if delete_username != None:
                 db.insert_user(insert_username)
