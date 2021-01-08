@@ -10,10 +10,10 @@
     </form>
         <p><strong>   </strong></p>
 
-    <form id="raz" class="form" action="" method="delete">
-        <label for="delete_username">Напиши и я его забуду</label>
+    <form class="form" action="" method="delete">
+        <label for="delete_username">Выбери и я его забуду</label>
 
-        <select form="raz" required >
+        <select>
         <script s language="javascript" type="text/javascript"> 
         var user = JSON.parse('{{users | tojson}}');
         for (index = 0; index < user.length; ++index)
