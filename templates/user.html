@@ -21,7 +21,7 @@
         var user = JSON.parse('{{users | tojson}}');
         for (index = 0; index < user.length; ++index)
         {
-            document.write("<option>"+user[index]+"</option>");
+            document.write("<option value="+user[index]+">"+user[index]+"</option>");
         }
         </script>
         </select>
