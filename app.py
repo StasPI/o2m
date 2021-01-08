@@ -29,7 +29,7 @@ def home():
         return redirect(url_for('home'))
 
 
-@app.route('/user/', methods=['GET', 'POST', 'PUT', 'delete'])
+@app.route('/user/', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def user():
     try:
         if request.method == 'PUT':
@@ -37,6 +37,10 @@ def user():
             if insert_username != None:
                 db.insert_user(insert_username)
         elif request.method == 'POST':
+            delete_username = request.form.get('delete_username')
+            if delete_username != None:
+                db.delete_user(delete_username)
+        elif request.method == 'DELETE':
             delete_username = request.form.get('delete_username')
             if delete_username != None:
                 db.delete_user(delete_username)
