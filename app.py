@@ -53,8 +53,8 @@ def user():
         elif request.method == 'POST':
             delete_username = request.form.get('delete_username')
             if delete_username != None:
-                db.insert_user(delete_username)
-                # db.delete_user(delete_username)
+                # db.insert_user(delete_username)
+                db.delete_user(delete_username)
         return render_template("user.html", users=db.all_users())
     except:
         return redirect(url_for('home'))
