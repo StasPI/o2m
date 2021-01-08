@@ -16,13 +16,14 @@
     </form>
         <p><strong>   </strong></p>
     <form>
-    <select id="select"></select>
-    const select = document.querySelector('#select');
+        <select>
+        <script language="javascript" type="text/javascript"> 
 
-    for (let i = 1; i <= 100; i++) {
-    const option = document.createElement('option');
-    option.textContent = option.value = i;
-    select.append(option);
-    }
+        for(var d=1;d<=31;d++)
+        {
+            document.write("<option>"+d+"</option>");
+        }
+        </script>
+        </select>
     </form>
 {% endblock %}
