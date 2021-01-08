@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block title %}
-Какой то титул в финише
+Управление человеками
 {% endblock %}
 {% block content %}
     <form class="form" action="" method="post">
@@ -11,7 +11,7 @@
         <p><strong>   </strong></p>
     <form class="form" action="" method="post">
         <label>Выбери и я его забуду:</label>
-        <select name="delete_username">
+        <select class="rounded-input" name="delete_username">
         <option value="" hidden disabled selected>Выбери меня</option>
         <script s language="javascript" type="text/javascript"> 
         var user = JSON.parse('{{users | tojson}}');
@@ -25,7 +25,7 @@
     </form>
         <p><strong>   </strong></p>
     <form class="form">
-    <p><strong>Смотри кого вспомнил:</strong></p>
+    <label>Смотри кого вспомнил:</label>
     <ul class="list5b">
         {% for user in users %}
             <li><strong>{{ user }}</strong></li>
