@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 db = UseDB()
 
+
 @app.after_request
 def add_header(response):
     response.cache_control.max_age = 30
