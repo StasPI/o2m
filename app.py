@@ -27,20 +27,18 @@ def home():
         return redirect(url_for('home'))
 
 
-@app.route('/user/', methods=['GET', 'POST', 'PUT', 'DELETE'])
+@app.route('/user/', methods=['GET', 'POST'])
 def user():
     try:
-        if request.method == 'DELETE':
+        if request.method == 'POST':
             insert_username = request.form.get('insert_username')
+            delete_username = request.form.get('delete_username')
             if insert_username != None:
                 insert_username.replace(" ", "_")
                 db.insert_user(insert_username)
-        elif request.method == 'POST':
-            delete_username = request.form.get('delete_username')
-            if delete_username != None:
+            elif delete_username != None:
                 delete_username.replace(" ", "_")
-                # db.delete_user(delete_username)
-                db.insert_user(delete_username)
+                db.delete_user(delete_username)
         return render_template("user.html", users=db.all_users())
     except:
         return redirect(url_for('home'))
