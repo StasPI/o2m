@@ -18,10 +18,10 @@
     <form>
         <select >
         <script s language="javascript" type="text/javascript"> 
-        var users = '{{ users }}';
-        for (index = 0; index < users.length; ++index)
+        var user = {{ users }};
+        for (index = 0; index < user.length; ++index)
         {
-            document.write("<option>"+users[index]+"</option>");
+            document.write("<option>"+user[index]+"</option>");
         }
         </script>
         </select>
