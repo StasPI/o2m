@@ -4,14 +4,13 @@
 {% endblock %}
 {% block content %}
     <form class="form" action="" method="post">
-        <label for="insert_username">Напиши и я его запомню</label>
+        <label for="insert_username">Напиши и я его запомню:</label>
 	    <input class="rounded-input" type="text" name="insert_username">
         <input value="Запомни" class="button" type="submit">
     </form>
         <p><strong>   </strong></p>
     <form class="form" action="" method="post">
-        <label>Выбери и я его забуду</label>
-
+        <label>Выбери и я его забуду:</label>
         <select name="delete_username">
         <script s language="javascript" type="text/javascript"> 
         var user = JSON.parse('{{users | tojson}}');
@@ -21,16 +20,6 @@
         }
         </script>
         </select>
-        
         <input value="Забудь" class="button" type="submit">
-    </form>
-        <p><strong>   </strong></p>
-    <form class="form">
-    <p><strong>Помню только этих:</strong></p>
-    <ul class="list5b">
-        {% for user in users %}
-            <li><strong>{{ user }}</strong></li>
-        {% endfor %}
-    </ul>
     </form>
 {% endblock %}
