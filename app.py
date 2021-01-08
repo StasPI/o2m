@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 db = UseDB()
 
+a = ['one', 'two']
 
 @app.after_request
 def add_header(response):
@@ -39,7 +40,8 @@ def user():
             delete_username = request.form.get('delete_username')
             if delete_username != None:
                 db.delete_user(delete_username)
-        return render_template("user.html", users=db.all_users())
+        # return render_template("user.html", users=db.all_users())
+        return render_template("user.html", users=a)
     except:
         return redirect(url_for('home'))
 
