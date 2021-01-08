@@ -36,7 +36,7 @@ def user():
             if insert_username != None:
                 db.insert_user(insert_username)
         elif request.method == 'DELETE':
-            delete_username = request.form.get('value')
+            delete_username = request.form.get('delete_username')
             if delete_username != None:
                 db.delete_user(delete_username)
         return render_template("user.html", users=db.all_users())
