@@ -17,7 +17,7 @@
         var user = JSON.parse('{{users | tojson}}');
         for (index = 0; index < user.length; ++index)
         {
-            document.write("<option value="+user[index]+">"+user[index]+"</option>");
+            document.write("<option class=\"rounded-input\" value="+user[index]+">"+user[index]+"</option>");
         }
         </script>
         </select>
