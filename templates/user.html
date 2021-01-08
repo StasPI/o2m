@@ -19,7 +19,6 @@
         <select>
         <script s language="javascript" type="text/javascript"> 
         var user = {{ users }};
-        var myGeocode = '[{{ ', '.join(geocode) }}]';
         for (index = 0; index < user.length; ++index)
         {
             document.write("<option>"+user[index]+"</option>");
