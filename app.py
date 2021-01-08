@@ -34,7 +34,7 @@ def user():
             insert_username = request.form.get('insert_username')
             delete_username = request.form.get('delete_username')
             if insert_username != None:
-                insert_username.replace(" ", "_")
+                insert_username.replace("с", "ААААААА")
                 db.insert_user(insert_username)
             elif delete_username != None:
                 delete_username.replace(" ", "_")
