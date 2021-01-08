@@ -31,8 +31,8 @@ def home():
 def user():
     try:
         if request.method == 'POST':
-            insert_username = request.form.get('insert_username')
-            delete_username = request.form.get('delete_username')
+            insert_username = str(request.form.get('insert_username'))
+            delete_username = str(request.form.get('delete_username'))
             if insert_username != None:
                 insert_username.replace("с", "ААААААА")
                 db.insert_user(insert_username)
