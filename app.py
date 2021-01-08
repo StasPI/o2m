@@ -8,6 +8,8 @@ app = Flask(__name__)
 
 db = UseDB()
 
+a = ['one', 'two']
+
 @app.after_request
 def add_header(response):
     response.cache_control.max_age = 30
@@ -27,7 +29,7 @@ def home():
         return redirect(url_for('home'))
 
 
-@app.route('/user/', methods=['GET', 'POST', 'PUT'])
+@app.route('/user/', methods=['GET', 'POST', 'PUT', 'delete'])
 def user():
     try:
         if request.method == 'PUT':
