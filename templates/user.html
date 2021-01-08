@@ -16,16 +16,9 @@
     </form>
         <p><strong>   </strong></p>
     <form class="form">
-    <p><strong>Помню только этих:</strong></p>
-    <ul class="list5b">
-        {% for user in users %}
-            <li><strong>{{ user }}</strong></li>
-        {% endfor %}
-    </ul>
-
     <p><select name="Удали меня я не хочу в этом учавствовать" size="1"></select></p>
         {% for user in users %}
-            <option>{{ user }}</option>
+            <option selected>{{ user }}</option>
         {% endfor %}
     </form>
 {% endblock %}
