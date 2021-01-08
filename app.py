@@ -31,13 +31,13 @@ def home():
 def user():
     try:
         if request.method == 'POST':
-            insert_username = str(request.form.get('insert_username'))
-            delete_username = str(request.form.get('delete_username'))
+            insert_username = request.form.get('insert_username')
+            delete_username = request.form.get('delete_username')
             if insert_username != None:
-                insert_username.replace("с", "ААААААА")
+                insert_username = insert_username.replace(" ", "_")
                 db.insert_user(insert_username)
-            elif delete_username != None:
-                delete_username.replace(" ", "_")
+            if delete_username != None:
+                delete_username = delete_username.replace(" ", "_")
                 db.delete_user(delete_username)
         return render_template("user.html", users=db.all_users())
     except:
