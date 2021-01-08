@@ -18,12 +18,11 @@
     <form>
         <select>
         <script s language="javascript" type="text/javascript"> 
-        var user = {{ users }};
-
-        {% comment %} for (index = 0; index < user.length; ++index)
+        var user = JSON.parse('{{users | tojson}}');
+        for (index = 0; index < user.length; ++index)
         {
             document.write("<option>"+user[index]+"</option>");
-        } {% endcomment %}
+        }
         </script>
         </select>
     </form>
