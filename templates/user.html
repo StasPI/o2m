@@ -19,10 +19,11 @@
         <select>
         <script s language="javascript" type="text/javascript"> 
         var user = {{ users }};
-        for (index = 0; index < user.length; ++index)
+        document.write("<option>"+users+"</option>");
+        {% comment %} for (index = 0; index < user.length; ++index)
         {
             document.write("<option>"+user[index]+"</option>");
-        }
+        } {% endcomment %}
         </script>
         </select>
     </form>
