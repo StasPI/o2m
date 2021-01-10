@@ -34,7 +34,7 @@ def home():
             return render_template('home.html',
                                    users=users,
                                    random_user=random_user_string)
-        return render_template('home.html', users=db.all_users())
+        # return render_template('home.html', users=db.all_users())
     except:
         return redirect(url_for('home'))
 
