@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 db = UseDB()
 
+
 @app.after_request
 def add_header(response):
     response.cache_control.max_age = 30
@@ -27,10 +28,13 @@ def home():
             if count_username == None:
                 random_user.add(choice(users))
             else:
-                while len(random_user) != count_username:
+                while len(random_user) != int(count_username):
                     random_user.add(choice(users))
-            return render_template('home.html',users=users,
-                                   random_user=random_user)
+                    
+            random_user_string = ' ,'.join(random_user)
+            return render_template('home.html',
+                                   users=users,
+                                   random_user=random_user_string)
         return render_template('home.html', users=db.all_users())
     except:
         return redirect(url_for('home'))
