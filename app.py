@@ -31,7 +31,7 @@ def home():
                 while len(random_user) != int(count_username):
                     random_user.add(choice(users))
                     
-            random_user_string = ' ,'.join(random_user)
+            random_user_string = ' '.join(random_user)
             return render_template('home.html',
                                    users=users,
                                    random_user=random_user_string)
