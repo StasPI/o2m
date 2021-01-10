@@ -5,6 +5,17 @@
 {% block content %}
     <form class="form" action="" method="post">
         <label>Нажми на кнопку - получишь результат:</label>
+        <select class="rounded-input" name="count_username">
+        <option value="" hidden disabled selected>Выбери меня</option>
+        <script s language="javascript" type="text/javascript"> 
+        var user = JSON.parse('{{users | tojson}}');
+        for (index = 0; index < user.length; ++index)
+        {
+            document.write("<option value="+index+">"+index+"</option>");
+        }
+        </script>
+        </select>
+
             <ul class="list5b"><strong>{{ random_user }}</strong></ul>
         <input value="Давай следующего" class="button" type="submit">
     </form>

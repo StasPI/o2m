@@ -19,11 +19,12 @@ def add_header(response):
 def home():
     try:
         if request.method == 'GET':
-            return render_template('home.html')
+            return render_template('home.html', users=db.all_users())
         elif request.method == 'POST':
-            return render_template('home.html',
+            count_username = request.form.get('count_username')
+            return render_template('home.html',users=db.all_users(),
                                    random_user=choice(db.all_users()))
-        return render_template('home.html')
+        return render_template('home.html', users=db.all_users())
     except:
         return redirect(url_for('home'))
 
