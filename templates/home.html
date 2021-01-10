@@ -9,9 +9,9 @@
         <option value="" hidden disabled selected>Выбери количество</option>
         <script s language="javascript" type="text/javascript"> 
         var user = JSON.parse('{{users | tojson}}');
-        for (index = 1; index < user.length; ++index)
+        for (index = 0; index < user.length; ++index)
         {
-            document.write("<option value="+index+">"+index+"</option>");
+            document.write("<option value="+(+index+1)+">"+(+index+1)+"</option>");
         }
         </script>
         </select>
